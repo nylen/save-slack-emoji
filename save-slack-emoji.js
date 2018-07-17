@@ -85,12 +85,12 @@
 	let pageCurrent = $$( '.pagination li.active' )[ 0 ];
 	pageCurrent = pageCurrent ? +pageCurrent.innerText : 1;
 
-	let script = [ '#!/bin/bash', 'set -x' ];
+	let script = [ '#!/bin/bash', 'set -e', 'set -x' ];
 	if ( pageCurrent === 1 ) {
 		script = script.concat( [
 			'',
 			'# CLEANUP',
-			'rm *.png *.gif *.jpg',
+			'rm -f *.png *.gif *.jpg',
 			'> aliases.txt',
 			'',
 		] );
