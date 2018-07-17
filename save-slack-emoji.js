@@ -19,7 +19,7 @@
 			.replace( /:/g, '' );
 		const type = tr.querySelector( 'td[headers=custom_emoji_type]' )
 			.innerText;
-		let aliasMatch = type.match( /^Alias for :([^:]+):$/ );
+		const aliasMatch = type.match( /^Alias for :([^:]+):$/ );
 		if ( type === 'Image' ) {
 			const emojiUrl = tr.querySelector( '.emoji-wrapper' )
 				.getAttribute( 'data-original' );
