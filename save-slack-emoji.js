@@ -40,7 +40,7 @@
 		}
 	} );
 
-	let script = [ 'rm *.gif *.jpg *.png' ]
+	let script = [ '#!/bin/bash', 'set -e', 'set -x', 'rm *.gif *.jpg *.png' ]
 		.concat( emojis.map( emoji => {
 			return 'wget "' + emoji.url + '" -O ' + emoji.filename;
 		} ) )
@@ -52,5 +52,6 @@
 
 	copy( script );
 	console.log( script );
-	console.log( 'Above shell script copied to clipboard' );
+	console.log( 'Above bash script copied to clipboard' );
+	console.log( 'Paste it to a file and run it using bash!' );
 } )();
