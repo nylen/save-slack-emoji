@@ -27,5 +27,5 @@ should work to download all of them:
 
 ```sh
 chmod +x download-*.sh
-( for script in ./download-*.sh; do bash $script || exit 1; done )
+( i=1; while [ -f "download-$i.sh" ]; do bash "download-$i.sh" || exit 1; i=$(($i+1)); done )
 ```
