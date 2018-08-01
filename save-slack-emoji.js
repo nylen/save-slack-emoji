@@ -90,7 +90,7 @@
 		script = script.concat( [
 			'',
 			'# CLEANUP',
-			'rm -f *.png *.gif *.jpg',
+			'rm -f -- *.png *.gif *.jpg',
 			'> aliases.txt',
 			'',
 		] );
